@@ -15,17 +15,18 @@ API server.
 One of the easiest ways to deploy the mutation webhook is using Cloud Functions.
 To deploy on Cloud Functions:
 
-1. Enable the Cloud Functions API (this only needs to be done once per project):
-
-    ```text
-    gcloud services enable --project ${PROJECT_ID} \
-      cloudfunctions.googleapis.com
-    ```
-
 1. Set environment variables (replace with your values):
 
     ```text
     export PROJECT_ID=my-project
+    ```
+
+1. Enable the Cloud Functions API (this only needs to be done once per project):
+
+    ```text
+    gcloud services enable --project ${PROJECT_ID} \
+      cloudbuild.googleapis.com \
+      cloudfunctions.googleapis.com
     ```
 
 1. Ensure you are in the `kubernetes/` directory

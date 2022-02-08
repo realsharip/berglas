@@ -85,8 +85,6 @@ update-go-samples:
 		rm -f $${dir}/go.mod $${dir}/go.sum ; \
 		(cd $${dir} && \
 			go mod init github.com/GoogleCloudPlatform/berglas/$${dir} && \
-			go get github.com/GoogleCloudPlatform/berglas@v0.6.0 && \
-			go get ./... && \
-			go mod tidy) ; \
+			go mod tidy -go=1.17 -compat=1.17) ; \
 	done
 .PHONY: update-go-samples
